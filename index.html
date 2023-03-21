@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
@@ -22,19 +20,30 @@
   </head>
   <body>
     <header class="head">
-      <div class="logo"><p>W.</p></div>
-      <div class="nav-mobile-logo">
-        <img src="assets/images/icon-menu.svg" alt="" />
-      </div>
+      <label class="logo"><p>W.</p></label>
       <nav class="nav-el">
-        <a href="" class="nav-link"> Home </a>
-        <a href="" class="nav-link">New</a
-        ><a href="" class="nav-link">Popular</a
-        ><a href="" class="nav-link">Trending</a
-        ><a href="" class="nav-link">Categories</a>
+        <a href="#" class="nav-link"> Home </a>
+        <a href="#" class="nav-link">New</a
+        ><a href="#" class="nav-link">Popular</a
+        ><a href="#" class="nav-link">Trending</a
+        ><a href="#" class="nav-link">Categories</a>
       </nav>
+      <div class="nav-mobile-logo">
+        <img
+          name="open-icon"
+          class="mobile-nav-icon"
+          src="assets/images/icon-menu.svg"
+          alt=""
+        />
+        <img
+          name="close-icon"
+          class="mobile-nav-icon"
+          src="assets/images/icon-menu-close.svg"
+          alt=""
+        />
+      </div>
     </header>
-    <div class="hero">
+    <main class="hero">
       <div class="hero-img"></div>
       <h1 class="hero-heading-q">The Bright Future of Web 3.0?</h1>
       <div class="hero-content">
@@ -119,12 +128,13 @@
           </li>
         </ul>
       </div>
-    </div>
+    </main>
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="#">Devendra Mulewa</a>.
     </div>
+    <script src="index.js"></script>
   </body>
 </html>

@@ -10,10 +10,14 @@ SPACING SYSTEM (px)
 FONT SIZE SYSTEM (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 */
-
+html {
+  overflow-x: hidden;
+}
 body {
   font-family: "Inter", sans-serif;
   background-color: #fffdfa;
+  overflow-x: hidden;
+  list-style: none;
 }
 .head {
   width: 85%;
@@ -29,6 +33,25 @@ body {
 .hero {
   width: 85%;
   margin: 0 auto;
+}
+.nav-mobile-logo {
+  display: none;
+  background: transparent;
+  cursor: pointer;
+}
+.nav-link:visited,
+.nav-link:link {
+  text-decoration: none;
+  padding: 12px;
+  font-size: 14px;
+  color: #5d5f79;
+}
+.nav-link:hover,
+.nav-link:active {
+  color: #e9ab53;
+}
+.mobile-nav-icon[name="close-icon"] {
+  display: none;
 }
 .hero-heading-q {
   font-size: 52px;
@@ -69,7 +92,6 @@ body {
   padding-top: 32px;
 }
 .aside-li {
-  list-style: none;
   padding-bottom: 24px;
   border-bottom: 0.5px solid #c5c6ce;
 }
@@ -83,7 +105,6 @@ body {
 }
 .top-blogs ul {
   display: flex;
-  list-style: none;
 }
 .top-blog-item span {
   color: #c5c6ce;
@@ -130,12 +151,45 @@ body {
   font-weight: 700;
 }
 @media only screen and (max-width: 375px) {
-  .nav-el {
-    display: none;
+  .nav-mobile-logo {
+    display: block;
+    z-index: 999;
   }
   .head {
     margin-top: 32px;
     margin-bottom: 32px;
+    position: relative;
+  }
+  .nav-el {
+    width: 50%;
+    height: 100vh;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 12px;
+    transform: translateX(100%);
+    transition: all 0.5s linear;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    flex-direction: column;
+  }
+  .active .nav-el {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .active .nav-mobile-logo .mobile-nav-icon[name="close-icon"] {
+    display: block;
+  }
+
+  .active .nav-mobile-logo .mobile-nav-icon[name="open-icon"] {
+    display: none;
   }
   .hero {
     display: flex;
@@ -171,21 +225,6 @@ body {
   }
 }
 @media only screen and (min-width: 376px) {
-  .nav-mobile-logo {
-    display: none;
-  }
-  .nav-link:visited,
-  .nav-link:link {
-    text-decoration: none;
-    padding: 12px;
-    font-size: 14px;
-    color: #5d5f79;
-  }
-  .nav-link:hover,
-  .nav-link:active {
-    color: #e9ab53;
-  }
-
   .hero {
     display: grid;
     grid-template-columns: repeat(3, minmax(100px, 1fr));

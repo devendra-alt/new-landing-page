@@ -201,7 +201,7 @@ body {
     margin-bottom: 16px;
   }
   .hero-img {
-    background-image: url(/assets/images/image-web-3-mobile.jpg);
+    background-image: url(./assets/images/image-web-3-mobile.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
     width: 300px;
@@ -236,7 +236,7 @@ body {
   .hero-img {
     grid-column: 1/3;
     grid-row: 1/2;
-    background-image: url(/assets/images/image-web-3-desktop.jpg);
+    background-image: url(./assets/images/image-web-3-desktop.jpg);
     background-size: 100%;
     width: 100%;
     height: 100%;
